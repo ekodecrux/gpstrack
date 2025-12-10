@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Tracking System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-blue-600 to-purple-700 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-4xl w-full">
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold text-white mb-4">
+                <i class="fas fa-bus-alt mr-3"></i>
+                Bus Tracking System
+            </h1>
+            <p class="text-xl text-blue-100">Real-time school bus tracking and management</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <a href="driver.html" class="bg-white rounded-xl shadow-2xl p-8 hover:scale-105 transition transform">
+                <div class="bg-blue-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-id-card text-white text-3xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800 text-center mb-2">Driver</h2>
+                <p class="text-gray-600 text-center">Track trips, confirm pickup & dropoff</p>
+            </a>
+            <a href="parent.html" class="bg-white rounded-xl shadow-2xl p-8 hover:scale-105 transition transform">
+                <div class="bg-green-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-users text-white text-3xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800 text-center mb-2">Parent</h2>
+                <p class="text-gray-600 text-center">Track bus, confirm dropoff</p>
+            </a>
+            <a href="admin.html" class="bg-white rounded-xl shadow-2xl p-8 hover:scale-105 transition transform">
+                <div class="bg-purple-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-cog text-white text-3xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800 text-center mb-2">Admin</h2>
+                <p class="text-gray-600 text-center">Manage schools, routes, students</p>
+            </a>
+        </div>
+        <div class="mt-12 bg-white/10 backdrop-blur-md rounded-xl p-6 text-white">
+            <h3 class="text-xl font-bold mb-4"><i class="fas fa-star mr-2"></i>Features</h3>
+            <ul class="grid md:grid-cols-2 gap-3 text-sm">
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Real-time GPS tracking</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Pickup/dropoff confirmation</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Student absence marking</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Multi-school SAAS</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>OpenStreetMap (zero cost)</li>
+                <li><i class="fas fa-check text-green-400 mr-2"></i>Complete audit trail</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
