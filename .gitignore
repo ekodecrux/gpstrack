@@ -1,129 +1,59 @@
-# Node.js
+# Node modules
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.npm
-.yarn-integrity
-*.tgz
-package-lock.json
-yarn.lock
-.pnpm-debug.log*
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-pip-log.txt
-pip-delete-this-directory.txt
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
-
-# Virtual Environments
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-.venv/
-
-# IDEs and Editors
-.vscode/
-.idea/
-*.swp
-*.swo
-*.swn
-.DS_Store
-Thumbs.db
-*~
-.project
-.classpath
-.settings/
-*.sublime-*
-
-# Logs
-logs/
-*.log
-log/
+npm-debug.log
 
 # Environment variables
 .env
-.env.local
-.env.*.local
-.env.development
-.env.test
-.env.production
+.dev.vars
+
+# Database credentials
+api/config.php
+
+# Logs
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
 
 # Build outputs
-/out
-/target
-/.next
-/.nuxt
-/dist
-/build
-/.cache
-
-# Testing
-/coverage
-/.nyc_output
+dist/
+build/
+.cache/
 
 # Temporary files
-tmp/
-temp/
 *.tmp
 *.temp
 *.bak
 *.backup
 *.old
 
-# Database
-*.sqlite
-*.sqlite3
-*.db
+# Archives (don't commit zip files)
+*.zip
+*.tar
+*.tar.gz
+*.rar
 
-# OS Files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# PHP temp files
+generate_passwords.php
 
-# Docker
-Dockerfile.local
-docker-compose.override.yml
+# Wrangler
+.wrangler/
+wrangler.toml
 
-# Misc
-*.pid
-*.seed
-*.pid.lock
-.grunt
-.lock-wscript
-
+# PM2
+.pm2/
+pids/

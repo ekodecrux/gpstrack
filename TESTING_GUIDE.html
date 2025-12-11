@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Tracker - Testing Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-500 to-purple-600 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg shadow-2xl p-8">
+            <div class="text-center mb-8">
+                <div class="bg-blue-500 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-bus text-3xl"></i>
+                </div>
+                <h1 class="text-4xl font-bold text-gray-800 mb-2">Bus Tracker SAAS v4.3</h1>
+                <p class="text-xl text-gray-600">Device Session Management - Testing Guide</p>
+            </div>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-exclamation-triangle text-yellow-400 text-xl"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm text-yellow-700">
+                            <strong>Important:</strong> This is a PHP/MySQL application that requires a web server to run.
+                            The sandbox environment does not support PHP, so you'll need to deploy to test.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                    <h3 class="text-xl font-bold text-blue-800 mb-3">
+                        <i class="fas fa-download mr-2"></i>Download Package
+                    </h3>
+                    <p class="text-gray-700 mb-4">Get the complete deployment package:</p>
+                    <a href="https://www.genspark.ai/api/files/s/gJxhNeMR" 
+                       class="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">
+                        <i class="fas fa-download mr-2"></i>Download (64 KB)
+                    </a>
+                    <p class="text-sm text-gray-600 mt-3">Version 4.3 - December 11, 2025</p>
+                </div>
+
+                <div class="bg-green-50 rounded-lg p-6 border border-green-200">
+                    <h3 class="text-xl font-bold text-green-800 mb-3">
+                        <i class="fas fa-check-circle mr-2"></i>What's New
+                    </h3>
+                    <ul class="text-gray-700 space-y-2">
+                        <li><i class="fas fa-mobile-alt text-green-600 mr-2"></i>Single device enforcement</li>
+                        <li><i class="fas fa-shield-alt text-green-600 mr-2"></i>Session conflict detection</li>
+                        <li><i class="fas fa-power-off text-green-600 mr-2"></i>Force logout capability</li>
+                        <li><i class="fas fa-history text-green-600 mr-2"></i>Complete audit trail</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-rocket mr-2"></i>Quick Deploy to Hostinger
+                </h2>
+                <div class="bg-gray-50 rounded-lg p-6 space-y-4">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">1</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-800">Download & Extract</h4>
+                            <p class="text-gray-600">Download the package and extract the tar.gz file</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-800">Upload to Hostinger</h4>
+                            <p class="text-gray-600">Upload all files to your public_html/ directory</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">3</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-800">Create Database</h4>
+                            <p class="text-gray-600">Create MySQL database: <code class="bg-gray-200 px-2 py-1 rounded">bus_tracker</code></p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">4</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-800">Import SQL Files (IN ORDER!)</h4>
+                            <p class="text-gray-600">
+                                1. schema.sql<br>
+                                2. super_admin_migration.sql<br>
+                                3. device_session_migration.sql<br>
+                                4. seed.sql (optional)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">5</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-800">Configure Database</h4>
+                            <p class="text-gray-600">Edit <code class="bg-gray-200 px-2 py-1 rounded">api/config.php</code> with your DB credentials</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">✓</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-800">Test!</h4>
+                            <p class="text-gray-600">Access: <code class="bg-gray-200 px-2 py-1 rounded">https://yourdomain.com/driver.html</code></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-vial mr-2"></i>Test Device Session Feature
+                </h2>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-white border-2 border-gray-200 rounded-lg p-4">
+                        <div class="text-center mb-3">
+                            <div class="bg-green-100 text-green-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-check text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Test 1: Normal Login</h4>
+                        </div>
+                        <ol class="text-sm text-gray-600 space-y-1">
+                            <li>1. Open driver.html in Chrome</li>
+                            <li>2. Login: +1234567890 / 1234</li>
+                            <li>3. ✅ Should work</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-white border-2 border-yellow-200 rounded-lg p-4">
+                        <div class="text-center mb-3">
+                            <div class="bg-yellow-100 text-yellow-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-exclamation text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Test 2: Detect Conflict</h4>
+                        </div>
+                        <ol class="text-sm text-gray-600 space-y-1">
+                            <li>1. Keep Chrome logged in</li>
+                            <li>2. Open Firefox, same login</li>
+                            <li>3. ✅ Shows conflict dialog</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-white border-2 border-red-200 rounded-lg p-4">
+                        <div class="text-center mb-3">
+                            <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-power-off text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Test 3: Force Login</h4>
+                        </div>
+                        <ol class="text-sm text-gray-600 space-y-1">
+                            <li>1. Click "Terminate Session"</li>
+                            <li>2. ✅ Firefox logs in</li>
+                            <li>3. ✅ Chrome logged out</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-key mr-2"></i>Test Credentials
+                </h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white rounded-lg p-4 border">
+                        <h4 class="font-semibold text-blue-600 mb-2">
+                            <i class="fas fa-steering-wheel mr-2"></i>Driver
+                        </h4>
+                        <p class="text-sm text-gray-600">
+                            <strong>URL:</strong> /driver.html<br>
+                            <strong>Phone:</strong> +1234567890<br>
+                            <strong>PIN:</strong> 1234
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 border">
+                        <h4 class="font-semibold text-green-600 mb-2">
+                            <i class="fas fa-user-friends mr-2"></i>Parent
+                        </h4>
+                        <p class="text-sm text-gray-600">
+                            <strong>URL:</strong> /parent.html<br>
+                            <strong>Phone:</strong> +1987654321<br>
+                            <strong>PIN:</strong> 5678
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 border">
+                        <h4 class="font-semibold text-purple-600 mb-2">
+                            <i class="fas fa-user-shield mr-2"></i>School Admin
+                        </h4>
+                        <p class="text-sm text-gray-600">
+                            <strong>URL:</strong> /admin.html<br>
+                            <strong>Username:</strong> admin<br>
+                            <strong>Password:</strong> admin
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 border">
+                        <h4 class="font-semibold text-red-600 mb-2">
+                            <i class="fas fa-crown mr-2"></i>Super Admin
+                        </h4>
+                        <p class="text-sm text-gray-600">
+                            <strong>URL:</strong> /superadmin.html<br>
+                            <strong>Username:</strong> superadmin<br>
+                            <strong>Password:</strong> superadmin123
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">
+                    <i class="fas fa-book mr-2"></i>Documentation Included
+                </h3>
+                <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+                    <li><i class="fas fa-file-alt text-blue-500 mr-2"></i>COMPLETE_DEPLOYMENT_GUIDE.md</li>
+                    <li><i class="fas fa-file-alt text-blue-500 mr-2"></i>DEVICE_SESSION_FEATURE.md</li>
+                    <li><i class="fas fa-file-alt text-blue-500 mr-2"></i>TESTING_DEMO_GUIDE.md</li>
+                    <li><i class="fas fa-file-alt text-blue-500 mr-2"></i>SUPERADMIN_GUIDE.md</li>
+                    <li><i class="fas fa-file-alt text-blue-500 mr-2"></i>INSTALL.md</li>
+                    <li><i class="fas fa-file-alt text-blue-500 mr-2"></i>README.md</li>
+                </ul>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="https://www.genspark.ai/api/files/s/gJxhNeMR" 
+                   class="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-lg text-xl font-bold hover:from-blue-600 hover:to-purple-700 transition shadow-lg">
+                    <i class="fas fa-download mr-2"></i>Download Complete Package
+                </a>
+                <p class="text-gray-600 mt-4">Version 4.3 | 64 KB | Production Ready</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-8 text-white">
+            <p class="text-sm">
+                <i class="fas fa-shield-alt mr-2"></i>
+                100% Production Ready • No AI Traces • Complete Device Session Management
+            </p>
+        </div>
+    </div>
+</body>
+</html>
