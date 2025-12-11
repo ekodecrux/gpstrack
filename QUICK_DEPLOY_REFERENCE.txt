@@ -1,0 +1,157 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                   VPS DEPLOYMENT - QUICK REFERENCE                       ║
+║                    Bus Tracker SAAS v4.3                                 ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 AUTOMATED DEPLOYMENT (RECOMMENDED)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Step 1: SSH into your VPS
+   ssh root@88.222.244.84
+
+Step 2: Download deployment script
+   wget https://raw.githubusercontent.com/ekodecrux/gpstrack/main/deploy-vps.sh
+
+Step 3: Make executable
+   chmod +x deploy-vps.sh
+
+Step 4: Run deployment
+   sudo ./deploy-vps.sh
+
+⏱️  Time: ~10-15 minutes
+✅ Everything configured automatically
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 WHAT GETS INSTALLED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Apache web server
+✅ MySQL database server  
+✅ PHP 7.4+ with extensions
+✅ Bus Tracker SAAS application
+✅ SSL certificate (Let's Encrypt)
+✅ UFW firewall
+✅ 21 database tables
+✅ Test data
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🌐 YOUR URLS AFTER DEPLOYMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Landing Page:  https://www.bustrackgps.in/
+Super Admin:   https://www.bustrackgps.in/superadmin.html
+School Admin:  https://www.bustrackgps.in/admin.html
+Driver App:    https://www.bustrackgps.in/driver.html
+Parent App:    https://www.bustrackgps.in/parent.html
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔑 TEST CREDENTIALS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Super Admin:  superadmin / password
+School Admin: admin / password
+Driver:       +1234567890 / 1234
+Parent:       +1987654321 / 5678
+
+⚠️  CHANGE ALL PASSWORDS AFTER DEPLOYMENT!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📁 FILE LOCATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Application:  /var/www/bustrackgps.in/
+Config File:  /var/www/bustrackgps.in/api/config.php
+Credentials:  /var/www/bustrackgps.in/DEPLOYMENT_CREDENTIALS.txt
+Apache Logs:  /var/log/apache2/bustrackgps_error.log
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💻 USEFUL COMMANDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+View credentials:
+   cat /var/www/bustrackgps.in/DEPLOYMENT_CREDENTIALS.txt
+
+Restart Apache:
+   sudo systemctl restart apache2
+
+Restart MySQL:
+   sudo systemctl restart mysql
+
+View Apache logs:
+   sudo tail -f /var/log/apache2/bustrackgps_error.log
+
+Database access:
+   mysql -u bustracker_user -p bus_tracker
+
+Update application:
+   cd /var/www/bustrackgps.in
+   git pull origin main
+   sudo systemctl restart apache2
+
+Check firewall:
+   sudo ufw status
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔒 DNS CONFIGURATION (DO THIS FIRST!)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Before running deployment:
+
+A Record:  bustrackgps.in      → 88.222.244.84
+A Record:  www.bustrackgps.in  → 88.222.244.84
+
+Wait 10-30 minutes for DNS propagation
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ POST-DEPLOYMENT CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Test all URLs (landing, super admin, admin, driver, parent)
+□ Change Super Admin password
+□ Change School Admin password
+□ Update driver PINs
+□ Update parent PINs
+□ Test device session management
+□ Setup automated backups
+□ Review credentials file
+□ Configure monitoring
+□ Test SSL certificate
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🆘 TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Can't access website:
+   - Check DNS propagation: dig www.bustrackgps.in
+   - Check Apache: sudo systemctl status apache2
+   - Check firewall: sudo ufw status
+
+Database connection error:
+   - Check MySQL: sudo systemctl status mysql
+   - Verify config.php credentials
+   - Test connection: mysql -u bustracker_user -p
+
+SSL certificate failed:
+   - Ensure DNS is pointing to server
+   - Run manually: sudo certbot --apache -d www.bustrackgps.in
+
+Permission errors:
+   sudo chown -R www-data:www-data /var/www/bustrackgps.in
+   sudo chmod -R 755 /var/www/bustrackgps.in
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📞 SUPPORT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GitHub:        https://github.com/ekodecrux/gpstrack
+Documentation: VPS_DEPLOYMENT_GUIDE.md
+Full Guide:    COMPLETE_DEPLOYMENT_GUIDE.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎉 Your Bus Tracker SAAS will be live at: https://www.bustrackgps.in/
+
+Version: 4.3 | Status: Production Ready | Date: December 11, 2025
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
